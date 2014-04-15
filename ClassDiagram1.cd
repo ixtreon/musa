@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ToDo.Colors" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Colors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.Ext" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAQACABCAAAAAAAAAAACAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Ext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.MainForm" Collapsed="true">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAgAACEADAAAAACRgAhCAAAAAAEIABBACQAAECQ=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="tasksPanel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ToDo.NativeMethods" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.Program">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ToDo.Task" Collapsed="true">
+    <Position X="7.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABRAAAAAAAgABIAAAIEAAAAQAAAABEAAAICCAAAAAA=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Data" />
+      <Property Name="Entry" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ToDo.TaskData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="ToDo.TaskData.TaskComparer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TaskData.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAgAABEAAAAAAACQARAAAAAAAAAiAAAAAA=</HashCode>
+      <FileName>TaskData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ToDo.TaskEntry" Collapsed="true">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <AssociationLine Name="btnExpire" Type="ToDo.Components.ToggleEndDateButton" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="6.75" />
+        <Point X="4.5" Y="5.837" />
+        <Point X="2.25" Y="5.837" />
+        <Point X="2.25" Y="5.191" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="btnMore" Type="ToDo.Components.MoreButton" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="6.75" />
+        <Point X="4.5" Y="5.837" />
+        <Point X="6.75" Y="5.837" />
+        <Point X="6.75" Y="5.191" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AYCACYAIASAAwEBMCAHADAACBAIEAAAABECACAAhoAA=</HashCode>
+      <FileName>TaskEntry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="chkCompleted" />
+      <Field Name="btnExpire" />
+      <Field Name="btnMore" />
+      <Field Name="Task" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ToDo.TaskEntryPanel" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgQBAAEIACAAAQAQABAACAAQAIgAAAgAAAAAAgAA=</HashCode>
+      <FileName>TaskEntryPanel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DefaultSettings" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ToDo.Components.CheckButton" Collapsed="true">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAABAgAEAAAIBAAAAAgAAAAAAgAA=</HashCode>
+      <FileName>Components\CheckButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.Components.MoreButton" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAAAAAAAAAAAAAAEAkAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\MoreButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.Components.TaskControl" Collapsed="true">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAgAAIAAAAAAAAQABAAAAAAAAAAAAAQEAAAABBAAA=</HashCode>
+      <FileName>Components\TaskControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.Components.ToggleEndDateButton" Collapsed="true">
+    <Position X="1.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAgAAAACAAAACAQACAAAACAAAAAAAAAgABAAIAAAA=</HashCode>
+      <FileName>Components\ToggleEndDateButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.Properties.Resources" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAACAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDo.Properties.Settings">
+    <Position X="12.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAIAAAAAAAAAAAIAAEAACBAIAAAAAICAgAAIg=</HashCode>
+      <FileName>Properties\TasksSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tasks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
