@@ -6,9 +6,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ToDo.Properties;
+using Musa.Properties;
 
-namespace ToDo
+namespace Musa
 {
     static class Program
     {

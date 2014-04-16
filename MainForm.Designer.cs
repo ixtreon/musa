@@ -1,4 +1,4 @@
-﻿namespace ToDo
+﻿namespace Musa
 {
     partial class MainForm
     {
@@ -36,7 +36,7 @@
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddTask = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.tasksPanel = new ToDo.TaskEntryPanel();
+            this.tasksPanel = new Musa.TaskEntryPanel();
             this.contextMenuStrip1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +123,7 @@
             this.Name = "MainForm";
             this.ShowInTaskbar = false;
             this.Text = "Form1";
+            this.TopMost = true;
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.contextMenuStrip1.ResumeLayout(false);

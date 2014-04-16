@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToDo.Components
+namespace Musa.Components
 {
     public class TaskControl : UserControl
     {

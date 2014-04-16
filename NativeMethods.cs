@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDo
+namespace Musa
 {
     static class NativeMethods
     {

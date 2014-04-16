@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using ltd = System.Collections.Generic.List<ToDo.TaskData>;
+using ltd = System.Collections.Generic.List<Musa.TaskData>;
 
-namespace ToDo.Properties
+namespace Musa.Properties
 {
     internal sealed partial class Settings : ApplicationSettingsBase
     {

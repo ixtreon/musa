@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ToDo.Properties;
+using Musa.Properties;
 
-namespace ToDo
+namespace Musa
 {
     public class TaskEntry : UserControl
     {
@@ -302,9 +302,9 @@ namespace ToDo
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.dueDate = new System.Windows.Forms.DateTimePicker();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.btnExpire = new ToDo.Components.ToggleEndDateButton();
-            this.chkCompleted = new ToDo.Components.CheckButton();
-            this.btnMore = new ToDo.Components.MoreButton();
+            this.btnExpire = new Musa.Components.ToggleEndDateButton();
+            this.chkCompleted = new Musa.Components.CheckButton();
+            this.btnMore = new Musa.Components.MoreButton();
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 

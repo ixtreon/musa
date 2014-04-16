@@ -9,9 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ToDo.Properties;
+using Musa.Properties;
 
-namespace ToDo
+namespace Musa
 {
     public partial class MainForm : Form
     {
@@ -23,17 +23,18 @@ namespace ToDo
 
         private void updateNotifyIconLocation()
         {
-            var cursor = Cursor.Position;
-            if (notifyIconLocation == null || notifyIconLocation.DistanceTo(cursor) > 20)
+            const int notifyIconRadius = 22;
+            var cursor = Cursor.Position.Add(-8, -8);
+            if (notifyIconLocation == null || notifyIconLocation.DistanceTo(cursor) > notifyIconRadius)
                 notifyIconLocation = cursor;
         }
 
         private void updateFormLocation()
         {
-            var windowPos = new Point(SystemInformation.PrimaryMonitorMaximizedWindowSize - Size);
-            windowPos.Y -= 8;
-            windowPos.X = Math.Min(windowPos.X, notifyIconLocation.X - 20);
-            this.Location = windowPos;
+            var dispRect = Screen.FromControl(this).WorkingArea;
+            var rawWindowRect = new Rectangle(notifyIconLocation, Size);
+            var windowRect = rawWindowRect.ConstrainTo(dispRect);
+            this.Location = windowRect.Location;
         }
 
         public MainForm()

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ToDo.Properties {
+namespace Musa.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

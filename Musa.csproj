@@ -7,8 +7,8 @@
     <ProjectGuid>{C092281C-DD31-437B-9673-0AFA60874562}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ToDo</RootNamespace>
-    <AssemblyName>ToDo</AssemblyName>
+    <RootNamespace>Musa</RootNamespace>
+    <AssemblyName>Musa</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

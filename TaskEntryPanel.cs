@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
-using ToDo.Properties;
+using Musa.Properties;
 
-namespace ToDo
+namespace Musa
 {
     class TaskEntryPanel : FlowLayoutPanel
     {

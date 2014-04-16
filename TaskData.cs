@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Serialization;
 
-namespace ToDo
+namespace Musa
 {
     /// <summary>
     /// Contains all the serializable data of a task

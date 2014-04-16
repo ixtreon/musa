@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToDo
+namespace Musa
 {
     static class Ext
     {
@@ -47,6 +47,14 @@ namespace ToDo
         public static Point ToPoint(this PointF p)
         {
             return new Point((int)p.X, (int)p.Y);
+        }
+
+
+        public static Rectangle ConstrainTo(this Rectangle a, Rectangle b)
+        {
+            a.X = Math.Min(b.Right - a.Width, Math.Max(b.Left, a.X));
+            a.Y = Math.Min(b.Bottom - a.Height, Math.Max(b.Top, a.Y));
+            return a;
         }
 
         /// <summary>

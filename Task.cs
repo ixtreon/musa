@@ -7,9 +7,9 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using ToDo.Properties;
+using Musa.Properties;
 
-namespace ToDo
+namespace Musa
 {
     public class Task
     {
