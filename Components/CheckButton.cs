@@ -68,14 +68,13 @@ namespace Musa.Components
             base.OnMouseClick(e);
         }
 
+
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
+            if (e.KeyCode == Keys.Space)
                 Task.Completed = !Task.Completed;
-                return;
-            }
-            base.OnKeyDown(e);
+            else
+                base.OnKeyDown(e);
         }
 
     }

@@ -21,14 +21,35 @@ namespace Musa
 
         Point notifyIconLocation;
 
-        private void updateNotifyIconLocation()
+
+        public MainForm()
         {
-            const int notifyIconRadius = 22;
-            var cursor = Cursor.Position.Add(-8, -8);
-            if (notifyIconLocation == null || notifyIconLocation.DistanceTo(cursor) > notifyIconRadius)
-                notifyIconLocation = cursor;
+            InitializeComponent();
+
+            this.runOnStartupToolStripMenuItem.Checked = File.Exists(autorunFile);
+            this.Size = new Size(200, 160);
         }
 
+
+        /// <summary>
+        /// Updates the notify icon's location based on the place we clicked and updates the form location
+        /// </summary>
+        /// <param name="iconPosition">The mouse position when the NotifyIcon.MouseClick event occurred</param>
+        private void updateNotifyIconLocation(Point iconPosition)
+        {
+            const int notifyIconRadius = 22;
+            var cursor = Cursor.Position - new Size(Width / 2, Height / 2);
+            if (notifyIconLocation == null || notifyIconLocation.DistanceTo(cursor) > notifyIconRadius)
+            {
+                notifyIconLocation = cursor;
+                updateFormLocation();
+            }
+
+        }
+
+        /// <summary>
+        /// Sets the form location to its correct position!
+        /// </summary>
         private void updateFormLocation()
         {
             var dispRect = Screen.FromControl(this).WorkingArea;
@@ -37,25 +58,9 @@ namespace Musa
             this.Location = windowRect.Location;
         }
 
-        public MainForm()
-        {
-            InitializeComponent();
-
-            this.runOnStartupToolStripMenuItem.Checked = File.Exists(autorunFile);
-
-            this.Size = new Size(200, 160);
-        }
-
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            notifyIcon.Dispose();
-            base.OnClosing(e);
-        }
-
-      
-
         private void btnAddTask_Paint(object sender, PaintEventArgs e)
         {
+            //draws a plus in the middle of the "Add Task" button
             const int offset = 4;
             var g = e.Graphics;
             var sh = btnAddTask.Height - 2 * offset;
@@ -86,9 +91,10 @@ namespace Musa
             if (e.Button != System.Windows.Forms.MouseButtons.Left)
                 return;
 
-            updateNotifyIconLocation();
-            updateFormLocation();
+            //update notify icon/form location
+            updateNotifyIconLocation(e.Location);
 
+            //show/hide the form
             if (this.Visible)
             {
                 Hide();
@@ -102,13 +108,9 @@ namespace Musa
             }
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //quit!
             notifyIcon.Visible = false;
             Application.Exit();
         }
@@ -127,11 +129,14 @@ namespace Musa
 
         private void tasksPanel_Layout(object sender, LayoutEventArgs e)
         {
+            //updates the form location after tasksPanel has changed its layout
             updateFormLocation();
         }
 
         private void runOnStartupToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //toggle autorun
+            //simply checks if there is a todo.url file in the Startup directory
             if (File.Exists(autorunFile))
             {
                 File.Delete(autorunFile);
@@ -142,8 +147,15 @@ namespace Musa
                 Ext.CreateShortcut(autorunFile);
                 runOnStartupToolStripMenuItem.Checked = true;
             }
+        }
 
-            Settings.Default.Save();
+        private void MainForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == (Keys.Control | Keys.N))
+            {
+                btnAddTask_Click(btnAddTask, new EventArgs());
+                //e.IsInputKey = false;
+            }
         }
     }
 }

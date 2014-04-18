@@ -62,7 +62,7 @@ namespace Musa
                 {
                     _expanded = value;
 
-                    //UI
+                    //update UI
                     this.Height = (value ? MaximumSize : MinimumSize).Height;
                     this.txtTitle.Visible = value;
                     this.txtDescription.Visible = value;
@@ -100,13 +100,12 @@ namespace Musa
                     return Color.Yellow.Tint(Color.White, 50);
 
                 //tint from yellow to red depending on time left
-                Color c = Color.Yellow
-                    .Tint(Color.Red, 100 - (int)(100 * Task.RemainingTime.TotalHours / Task.TotalTime.TotalHours))
-                    .Tint(Color.White, 25);
+                Color c = Colors.PendingTask
+                    .Tint(Colors.ExpiredTask, 100 - (int)(100 * Task.RemainingTime.TotalHours / Task.TotalTime.TotalHours));
 
                 //fuck that and override with green if it's completed
                 if (Task.Completed)
-                    c = Color.LimeGreen;
+                    c = Colors.CompletedTask;
 
                 //mouse hover maybe?
                 var mouseOver = this.IsMouseOver();
@@ -161,14 +160,24 @@ namespace Musa
                     c.LostFocus += c_LostFocus;
                 }
             }
+            txtTitle.KeyDown += (o, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                    Expanded = false;
+            };
 
             chkCompleted.KeyDown += (o, e) =>
             {
                 if (e.KeyCode == Keys.Delete)
                     Remove(this);
+                else if (e.KeyCode == Keys.Enter)
+                    Expanded = !Expanded;
+                else if (e.KeyCode == Keys.Down && Parent is TaskEntryPanel)
+                    ((TaskEntryPanel)Parent).SelectNextTaskEntry(this, true, true);
+                else if (e.KeyCode == Keys.Up && Parent is TaskEntryPanel)
+                    ((TaskEntryPanel)Parent).SelectNextTaskEntry(this, false, true);
             };
         }
-
 
         //public methods
         /// <summary>
@@ -395,6 +404,7 @@ namespace Musa
             this.btnMore.Name = "btnMore";
             this.btnMore.Size = new System.Drawing.Size(20, 20);
             this.btnMore.TabIndex = 5;
+            this.btnMore.TabStop = false;
             this.btnMore.Task = null;
             this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
             // 

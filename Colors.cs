@@ -10,6 +10,9 @@ namespace Musa
     static class Colors
     {
         public static Color ForeColor = Color.Black;
+        public static Color ExpiredTask = Color.Brown.Tint(Color.White, 25);
+        public static Color PendingTask = Color.Yellow.Tint(Color.White, 25);
+        public static Color CompletedTask = Color.LimeGreen;
 
         /// <summary>
         /// Tintintintintintint!
@@ -18,7 +21,7 @@ namespace Musa
         /// <returns></returns>
         public static Color Tint(this Color c)
         {
-            return c.Tint(c, 10);
+            return c.Tint(Color.Black, 10);
         }
 
         public static Color Tint(this Color a, Color b, int ratio)

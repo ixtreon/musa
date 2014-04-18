@@ -45,6 +45,13 @@ namespace Musa.Components
             TaskDataChanged(this);
         }
 
+        protected override bool IsInputKey(Keys keyData)
+        {
+            return base.IsInputKey(keyData)
+                || keyData == Keys.Down
+                || keyData == Keys.Up;
+        }
+
         protected override void OnMouseEnter(EventArgs e)
         {
             MouseOver = true;

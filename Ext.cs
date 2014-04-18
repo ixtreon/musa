@@ -97,5 +97,13 @@ namespace Musa
                 writer.Flush();
             }
         }
+
+        public static IEnumerable<T> GetControls<T>(this System.Windows.Forms.Control.ControlCollection cc, bool visibleOnly)
+            where T : Control
+        {
+            return cc.Cast<Control>()
+                    .Where(c => (c is T) && c.Visible == true)
+                    .Cast<T>();
+        }
     }
 }

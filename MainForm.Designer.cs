@@ -47,7 +47,6 @@
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "ToDo";
             this.notifyIcon.Visible = true;
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             this.notifyIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDown);
             // 
             // contextMenuStrip1
@@ -120,12 +119,14 @@
             this.ClientSize = new System.Drawing.Size(318, 243);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "MainForm";
             this.ShowInTaskbar = false;
             this.Text = "Form1";
             this.TopMost = true;
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.MainForm_PreviewKeyDown);
             this.contextMenuStrip1.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
